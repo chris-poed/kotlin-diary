@@ -18,7 +18,7 @@ Work through each of these exercises in sequence.
 
 ### Phase Zero: Introduction
 
-1. [Introduction to the module](introduction/01_introduction.md)
+1. [Introduction to the module](introduction/01_intro.md)
 2. [A tour of the IntelliJ IDE](introduction/02_ide_tour.md)
 
 ### Phase One: Kotlin bites
@@ -41,3 +41,14 @@ Work through each of these exercises in sequence.
 5. [Search for Tracks](challenges/)
 6. [Make it Yours](challenges/)
 
+
+
+<!-- BEGIN GENERATED SECTION DO NOT EDIT -->
+
+---
+
+**How was this resource?**  
+[😫](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy%2Fkotlin-fundamentals&prefill_File=README.md&prefill_Sentiment=😫) [😕](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy%2Fkotlin-fundamentals&prefill_File=README.md&prefill_Sentiment=😕) [😐](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy%2Fkotlin-fundamentals&prefill_File=README.md&prefill_Sentiment=😐) [🙂](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy%2Fkotlin-fundamentals&prefill_File=README.md&prefill_Sentiment=🙂) [😀](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy%2Fkotlin-fundamentals&prefill_File=README.md&prefill_Sentiment=😀)  
+Click an emoji to tell us.
+
+<!-- END GENERATED SECTION DO NOT EDIT -->
