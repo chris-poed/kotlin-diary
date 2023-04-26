@@ -23,14 +23,14 @@ Work through each of these exercises in sequence.
 
 ### Phase One: Kotlin bites
 
-1. [Your first Kotlin program](kotlin_bites/)
-2. [Types](kotlin_bites/)
-3. [Functions](kotlin_bites/)
-4. [Data structures](kotlin_bites/)
-5. [Classes](kotlin_bites/)
-6. [Generic functions](kotlin_bites/)
-7. [Nullables](kotlin_bites/)
-8. [Writing tests](kotlin_bites/)
+1. [Your first Kotlin program](kotlin_bites/01_first_program.md)
+2. [Types](kotlin_bites/02_types.md)
+3. [Functions](kotlin_bites/03_functions.md)
+4. [Control flow](kotlin_bites/04_control_flow.md)
+5. [Data structures](kotlin_bites/05_data_structures.md)
+6. [More on functions](kotlin_bites/06_functions2.md)
+7. [Classes](kotlin_bites/07_classes.md)
+8. [Writing tests](kotlin_bites/08_writing_tests.md)
 
 ### Phase Two: Challenges
 
