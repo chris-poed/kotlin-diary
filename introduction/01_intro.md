@@ -6,7 +6,7 @@ The creators of the language also spent a great deal of time designing it to mak
 
 ## What is the JVM?
 
-You might read online that Kotlin is a JVM (Java virtual machine) language, or that it integrates with Java. We won't get too much into it in this module, but it means that Kotlin benefits from the platform and the vast ecosystem built around the Java language in the last decades.
+You might read online that Kotlin works with the JVM (Java virtual machine) language, or that it integrates with Java. We won't get too much into it in this module, but it means that Kotlin benefits from the platform and the vast ecosystem built around the Java language in the last decades.
 
 It's a bit like getting the best of both worlds — the ecosystem has been around for a while and is robust, and the language is a modern one, so benefits from years of shared learning in the software engineering community.
 

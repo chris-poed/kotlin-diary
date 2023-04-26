@@ -10,10 +10,6 @@ Bites.](https://github.com/makersacademy/course/blob/main/labels/bites.md)_
 
 Learn to write a "Hello world" program in Kotlin.
 
-## Demonstration
-
-Here is [a video demonstration] of creating a project.
-
 ## Setting up the project
 
 In IntelliJ, go to File -> New -> Project.
@@ -30,11 +26,10 @@ Then click "Create" to confirm. It might then take a few moments for IntelliJ to
 
 ## The code
 
-The IDE generated some starter code for us in `Main.kt`:
+The IDE generated some starter code for us in `Main.kt`.
 
 ```kotlin
 fun main(args: Array<String>) {
-    println("Hello World!")
 
     println("Program arguments: ${args.joinToString()}")
 }
@@ -44,7 +39,13 @@ In Kotlin, the "entrypoint" of a program (which is, the first function being run
 
 ## Checking the program output
 
-After running the program, the console should automatically open at the bottom of the editor to display the message printed by `println`. 
+After running the program, the console should automatically open at the bottom of the editor to display the message printed by `println`.
+
+```
+Program arguments: 
+
+Process finished with exit code 0
+```
 
 ## Exercise
 
@@ -55,10 +56,6 @@ println("Hello world")
 ```
 
 Then run the program again to check the output.
-
-## Exercise
-
-Modify the `main` function so it says Hello to you (with your name), instead of "Hello world"
 
 ## What to do next
 

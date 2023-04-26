@@ -12,9 +12,13 @@ Learn to write Kotlin functions
 
 ## Function syntax
 
-Like in other languages, a function can take arguments, do some work, and return a result.
+Like in other languages, a Kotlin function can take arguments, do some work, and return a result. For example, a function `add` to sum two numbers:
 
-In Kotlin, we need to specify the type for the arguments and return value.
+```kotlin
+val result = add(2, 3) // 5
+```
+
+When defining a function, we need to specify the type for the arguments and return value.
 
 ```kotlin
 // getHelloMessage takes one String argument, 
@@ -42,7 +46,9 @@ val message = getHelloMessage("James")
 
 ## Returning `null`
 
-As seen in the previous section, a value of type `String` cannot be null. However, a value of type `String?` can be. Therefore, if a function may return `null`, its return type needs to allow for it:
+As seen in the previous section, a value of type `String` cannot be null.
+
+However, a value of type `String?` can be. Therefore, if a function might return `null`, its return type needs to allow for it:
 
 ```kotlin
 fun findAddress(name): String {

@@ -10,6 +10,10 @@ In this module, you'll learn to use an IDE (short for _Integrated Development En
 
 [To install it, head to the downloads page of the IntelliJ website](https://www.jetbrains.com/idea/download). Make sure you download the "Community Edition", which is free.
 
+Once you've done installing it in your Applications folder, run IntelliJ. You should be prompted by the Welcome window.
+
+![](./resources/intellij1.png)
+
 ## Starter program
 
 We'll use the starter program provided in this repository, in `projects/diary`. To download it, clone this repository:
@@ -25,9 +29,15 @@ open .
 
 You can now open the project in IntelliJ. It might take a few minutes for it to load before you can use the editor.
 
+<details>
+    <summary>Got an error message?</summary>
+
+    You might need to "sync" the project with the editor to make sure all the right settings are applied.
+</details>
+
 ## Video
 
-[A video tour of the IDE is available here]()
+[A video tour of the IDE is available here](https://youtu.be/UhozQq1995o)
 
 Otherwise, you can follow steps in the written guidance below.
 
@@ -65,7 +75,7 @@ This file contains a Kotlin class (more on this later) which contains some tests
 
 ### Exercise
 
-Run another test.
+Try to break the code by changing things in `Diary.kt`. Run the tests again and see a failure.
 
 ## Resolving problems
 
@@ -79,15 +89,9 @@ Click on the lightbulb :bulb: icon and the IDE will offer an option to automatic
 
 The file `Main.kt` contains another problem — find out what it is and fix it using the quick-fix suggested by the IDE.
 
-## What is the "compiler"?
+## What do to next
 
-In this module, and more generally while working with Kotlin or researching online, you may see sentences such as:
- * "The compiler won't allow it"
- * "This will not compile"
- * "This will raise a compiler error"
-
-...
-
+[Go on to the Kotlin bites](../kotlin_bites/01_first_program.md) and create your first Kotlin program.
 
 <!-- BEGIN GENERATED SECTION DO NOT EDIT -->
 

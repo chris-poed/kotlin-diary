@@ -96,7 +96,6 @@ fun calculate(a: Int, b: Int, calculateFunction: (Int, Int) -> Int)
 
 In other words, the function `calculate` accepts as a third argument a function which takes two `Int` and returns an `Int`. Therefore the `calculate` function doesn't need to know how to do the operation between the two numbers it gets — it can "delegate" the operation to the given function. As long as we give it a function of type `(Int, Int) -> Int`, this will work.
 
-
 ## Lambdas
 
 When the last argument is a function, we can use the lambda syntax to declare the function "directly", without giving it a name beforehand:

@@ -12,6 +12,8 @@ Learn to use conditions and loops in Kotlin.
 
 ## Conditionals
 
+Kotlin has a few ways to handle conditional statements, like `if` / `else` and `when` expressions.
+
 ```kotlin
 
 // We use the type `Any`, so the argument

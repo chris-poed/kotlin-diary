@@ -8,22 +8,32 @@ Bites.](https://github.com/makersacademy/course/blob/main/labels/bites.md)_
 
 ## Objective
 
-Learn to use data types in Kotlin
+Learn to explain and use data types in Kotlin.
+
+## Video
+
+[A video walkthrough of this section is available here.](https://www.youtube.com/watch?v=yjLo4_gBtn4)
 
 ## On Types
 
 As you may already know, a program can manipulate different kind of values:
- * numbers
+ * numbers (like `42` or `5.25`)
  * booleans (true or false)
- * strings
- * list of values (arrays, etc)
+ * strings (like `"Kotlin"`)
+ * list of values (arrays, maps, etc)
+ * etc.
 
 If you've used a language such as Ruby or Python before, you might have not had to worry much about these. In Kotlin, though, types are an important element of the language, so it's worth spending some time learning about it.
 
-## Declaring variables
+You can try out by yourself most of the code examples below to check results.
+
+## Declaring values
+
+We can declare values with the keyword `val` as shown below.
 
 ```kotlin
-val name: String = "Anna"
+// Declaring a variable of type String
+val personName: String = "Anna"
 
 // We can omit the type if the compiler
 // is able to "guess" it from the value on the 
@@ -33,7 +43,10 @@ val otherName = "Sandy"
 val a = 20
 
 val isOverdue = true
+```
 
+When using the keyword `val`, a value cannot be modified later. If you really need it, you can use `var` instead.
+```kotlin
 // When declared with the keyword `val`,
 // a variable cannot be updated later.
 val text = "Some text"
@@ -44,6 +57,10 @@ text = "This is different" // won't work.
 var mutableText = "This text can be changed"
 mutableText = "..."
 ```
+
+You should use aim to `val` to declare immutable values most of the time. Why?
+
+In short, using variables which can be reassigned can lead to all sort of bugs. Dealing with values which cannot be modified help make our code easier to read, and less error-prone.
 
 ## Member functions (methods) and properties
 
@@ -61,13 +78,16 @@ println(name.uppercase()) // "OLLIE"
 println(name.reversed()) // "eillO"
 ```
 
-> IDE tip :bulb: When starting to write `name.`, the IDE will display a list of possible properties and methods. This is helpful when you're not sure what is the exact property of method name you need to use, and want to browse a list of few different options.
+> IDE tip :bulb: When starting to type `name.`, the editor will display a list of possible properties and methods. This is helpful when you're not sure what is the exact property of method name you need to use, and want to browse a list of few different options.
 
-## About `null`
+## Nullable types
 
-In other languages, doing something like this would be OK:
+In Kotlin, `null` is a special value which represents... the absence of value (nothing) — in other languages, it might be called `nil` or `None`.
+
+In other languages, doing something like this would probably be OK:
 
 ```kotlin
+// Declaring a String and assign null to it.
 val name: String = null
 ```
 
@@ -146,7 +166,7 @@ val number = "3" as Number
 val listOfThings: List<Int> = listOf(3, "Hello", 4)
 ```
 
-[Watch an explanation of these problems and their solutions in this video]
+[Watch an explanation of these problems and their solutions in this video](https://www.youtube.com/watch?v=yjLo4_gBtn4&t=1637s)
 
 ## What do to next
 
