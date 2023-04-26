@@ -40,9 +40,17 @@ fun getHelloMessage(name: String) = "Hello ${name}"
 val message = getHelloMessage("James")
 ```
 
-## Returning `Unit`
+If a function doesn't need to return anything, its return type is `Unit`.
 
-@TODO (do they need to know this?)
+```kotlin
+fun printList(list: List<Any>): Unit {
+    list.forEach {
+        print(it)
+    }
+
+    // No return statement
+}
+```
 
 ## Returning `null`
 
@@ -68,18 +76,27 @@ challenging even for a professional engineer. Pick whichever you prefer._
 
 You can work through the following exercises in the same function `main` of the previous program, or in a new project. You might want to use the function `println` to check your results.
 
-* :hot_pepper: Define a new function `add` which adds two numbers and return the result.
+### 1 :hot_pepper: 
+
+Define a new function `add` which adds two numbers and return the result.
     ```kotlin
     val result = add(2, 3) // 5
     ```
-* :hot_pepper: Define a function `revealSecret` which takes a passcode in argument, and returns a secret string "The cookies are in the desk drawer" only if the given passcode is the string `"HUNGRY"`. If the given passcode is something else, the function should return `null`. What should be the return value type of this function?
-    ```kotlin
-    val secret = revealSecret("HUNGRY") 
-    println(secret) // "The cookies are in the desk drawer"
+### 2 :hot_pepper: 
 
-    val secret = revealSecret("Hi") 
-    println(secret) // null
-    ```
+Define a function `revealSecret` which takes a passcode in argument, and returns a secret string "The cookies are in the desk drawer" only if the given passcode is the string `"HUNGRY"`.
+
+If the given passcode is something else, the function should return `null`.
+
+(What should be the return value type of this function?)
+
+```kotlin
+val secret = revealSecret("HUNGRY") 
+println(secret) // "The cookies are in the desk drawer"
+
+val secret = revealSecret("Hi") 
+println(secret) // null
+```
 
 ## What do to next
 

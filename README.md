@@ -34,12 +34,12 @@ Work through each of these exercises in sequence.
 
 ### Phase Two: Challenges
 
-1. [Get Started with Fizzbuzz](challenges/)
-2. [Create the Music Library](challenges/)
-3. [Add a Track Class](challenges/)
-4. [Play Some Tunes](challenges/)
-5. [Search for Tracks](challenges/)
-6. [Make it Yours](challenges/)
+Work through these challenges of increasing complexity. Each of them contains supporting materials and references to previous bites when needed.
+
+1. [Fizzbuzz](challenges/01_fizzbuzz.md)
+2. [Music Library](challenges/02_music_library.md)
+3. [Bank](challenges/03_bank.md)
+4. [Word-guessing game](challenges/04_word_guessing_game.md)
 
 
 

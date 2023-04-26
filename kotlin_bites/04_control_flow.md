@@ -15,7 +15,36 @@ Learn to use conditions and loops in Kotlin.
 Kotlin has a few ways to handle conditional statements, like `if` / `else` and `when` expressions.
 
 ```kotlin
+var max = a
 
+// Simple "if"
+if (a < b) max = b
+
+// With "else"
+if (a > b) {
+    max = a
+} else {
+    max = b
+}
+
+// As an expression
+// (`max` will be assigned to either a or b)
+max = if (a > b) a else b
+```
+
+```kotlin
+when (x) {
+    1 -> print("x == 1")
+    2 -> print("x == 2")
+    else -> {
+        print("x is neither 1 nor 2")
+    }
+}
+```
+
+Here is an example of using `when` to write a function with takes any Kotlin value, and returns a description of it as a String.
+
+```kotlin
 // We use the type `Any`, so the argument
 // could be any type.
 fun whatIsThis(something: Any): String {
@@ -36,13 +65,9 @@ fun whatIsThis(something: Any): String {
 }
 ```
 
-## Error handling
-
-@TODO
-
 ## Exercise
 
-Define a function `getNumberSign` that takes a number and returns either "zero", "positive" or "negative" depending on its sign. If the argument is not a number, the function should return `null`.
+Define a function `getNumberSign` that takes a number and returns a String which is either "zero", "positive" or "negative" depending on its sign. If the argument is not a number, the function should return `null`.
 
 ```kotlin
 getNumberSign(3) // "positive"
@@ -54,9 +79,11 @@ getNumberSign(-5) // "negative"
 getNumberSign("not a number") // null
 ```
 
-## Exercise
+## Exercise 
 
-@TODO 
+Write a function `isWordList` which returns `true` only if the given value is a List of Strings, and `false` otherwise.
+
+You should use a `when` expression in this function.
 
 ## What do to next
 

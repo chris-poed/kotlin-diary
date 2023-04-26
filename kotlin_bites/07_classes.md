@@ -31,6 +31,10 @@ println(person.fullName)
 println(person.getIntroduction())
 ```
 
+### How to create a new class file?
+
+Go into `src/main/kotlin` in the file tree. Right-click on the `kotlin` directory and select `New -> Kotlin Class`
+
 ## Data classes
 
 Sometimes we need to crate a class just to hold some data, but without any behaviour. We can use Data classes for this:

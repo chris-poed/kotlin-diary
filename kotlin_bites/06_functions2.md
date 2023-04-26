@@ -74,7 +74,7 @@ fun multiply(a: Int, b: Int): Int {
 }
 
 // We're not calling the function
-// but referencing them, so we need to use
+// but referencing it, so we need to use
 // `::` in front of their name.
 calculate(2, 3, ::add) // 2 + 3 = 5
 calculate(2, 4, ::multiply) // 2 * 4 = 8
@@ -82,16 +82,22 @@ calculate(2, 4, ::multiply) // 2 * 4 = 8
 
 This might be challenging to fully grasp, so don't hesitate to take it slow.
 
-We can see that both `add` and `multiply` have the same type — they both take two `Int` arguments and return an `Int`. In Kotlin jargon, their type is:
+We can see that both `add` and `multiply` have the same type — they both take two `Int` arguments and return an `Int`. So in Kotlin land, their type is:
 
 ```
 (Int, Int) -> Int
 ```
 
-The function calculate's third parameter is what might seem a bit alien here. But note that this is exactly the same type:
+The function `calculate`'s third argument might seem a bit alien here. But note that this is exactly the same type:
 
 ```kotlin
-fun calculate(a: Int, b: Int, calculateFunction: (Int, Int) -> Int)
+fun calculate(
+    a: Int,
+    b: Int,
+    // Third argument of type (Int, Int) -> Int
+    // (Same as add and multiply!)
+    calculateFunction: (Int, Int) -> Int
+)
 ```
 
 In other words, the function `calculate` accepts as a third argument a function which takes two `Int` and returns an `Int`. Therefore the `calculate` function doesn't need to know how to do the operation between the two numbers it gets — it can "delegate" the operation to the given function. As long as we give it a function of type `(Int, Int) -> Int`, this will work.
@@ -117,8 +123,8 @@ listOf("one", "two", "three").forEach {
 
 ## Exercise
 
-1. Implement a function `convertToCaps` which takes a string and converts a string to capital letters.
-2. Implement a function `exclaim` which takes a string and adds an exclamation mark to it.
+1. Implement a function `convertToCaps` which takes a string and returns the string converted to capital letters.
+2. Implement a function `exclaim` which takes a string and returns the given string with an exclamation mark at the end.
 3. Implement a function `greetWith` which we can call this way:
 
 ```kotlin
