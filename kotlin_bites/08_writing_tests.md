@@ -42,6 +42,13 @@ class Greeter {
 
 ## Running tests
 
+To run tests using IntelliJ, you can either:
+  * Run a single test (using the "play" button next to where it is declared in the editor).
+  * Run all tests in a test class (using the "play" button next to the class declaration in the editor).
+  * Run all tests in the project (In the file explorer, right-click on the `tests` directory then select "Run all tests in...")
+
+The results of the tests run will appear in the bottom of the IntelliJ IDE.
+
 ## Exercise
 
 Write some tests for the following class

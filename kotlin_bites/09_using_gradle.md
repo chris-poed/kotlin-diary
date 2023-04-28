@@ -18,8 +18,6 @@ Learn to install libraries using the tool Gradle.
 
 @TODO
 
-[Next Challenge](10_functional_programming.md)
-
 <!-- BEGIN GENERATED SECTION DO NOT EDIT -->
 
 ---

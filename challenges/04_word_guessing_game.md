@@ -34,30 +34,75 @@ output.
 package tech.makers.game
 
 fun main() {
+  // A list of possible words - one will
+  // be randomly picked by the program
   val listOfWords = listOf("MAKERS", "DEVELOPER", "SANDWICH")
-  val game = Game(listOfWords)
 
-  game.getWordToGuess() // "M_____"
+  // An object of the `GameState` data class
+  // (You will need to create this data class too).
+  val gameState = createGameState(listOfWords)
 
-  game.getRemainingAttempts() // 10
+  // Returns the partially masked
+  // word to guess (e.g  "M_____" if the picked
+  // word is "MAKERS")
+  getWordToGuess(gameState)
 
-  game.attemptLetter("E") // true
+  // Returns the number of remaining attempts
+  // (initially 10)
+  getRemainingAttempts(gameState)
 
-  game.getWordToGuess() // "M__E__"
+  // Returns true (the letter is in the word)
+  val newGameState = attemptGuessLetter(gameState, "E")
 
-  game.attemptLetter("O") // false
+  getWordToGuess(gameState) // "M__E__"
 
-  game.getWordToGuess() // "M__E__"
+  // Returns false (the letter is not in the word)
+  val newGameState2 = attemptLetter(gameState, "O") 
 
-  game.getRemainingAttempts() // 9
+  getWordToGuess(gameState) // "M__E__"
+
+  getRemainingAttempts(gameState) // 9
 
   // ...
 }
 ```
 
+Build this program using [the Functional programming paradigm](./03_bank.md#on-functional-programming).
+
 ## Supporting materials
 
+### How to change the game state?
+
 @TODO
+
+You'll notice a few things on the code above:
+  * Since our functions cannot change external state (have side-effects), we need to "pass around" the `gameState` value to each function.
+  * Since the function `attemptGuessLetter` can't change the state, it needs to return a new `GameState` object which corresponds to the new state after trying to guess the letter.
+
+## I'm not sure where to start...
+
+Start by creating a test class containing a simple test case - for a new game state, we should get the word to guess. Don't use a dictionary of possible words, but use a single word to start with.
+
+```kotlin
+// file: src/test/kotlin/GameTest.kt
+
+import kotlin.test.Test
+
+class GameTest {
+
+    @Test
+    fun getsMaskedWordToGuess() {
+        // Give the word to guess
+        val state = createGameState("MAKERS")
+
+        val maskedWord = getWordToGuess(state)
+
+        assert(maskedWord == "M_____")
+    }
+}
+```
+
+Then, gradually add more tests to test-drive the remaining functions used to manage the game.
 
 <!-- BEGIN GENERATED SECTION DO NOT EDIT -->
 

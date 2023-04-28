@@ -6,15 +6,10 @@ of resources including text, video, and external documentation. [Read more about
 how to use Makers
 Wheels.](https://github.com/makersacademy/course/blob/main/labels/wheels.md)_
 
-In this exercise you'll test-drive Bank. Where Fizzbuzz introduced you to the
-rudimentary conditions and loops of the language, Bank introduces you to
-way modules of code are organised in a language.
+In this exercise you'll test-drive Bank in using a paradigm called Functional programming.
 
 - [Exercise](#exercise)
 - [Supporting Materials](#supporting-materials)
-  - [Kotlin's Paradigm](#kotlins-paradigm)
-  - [Kotlin Classes](#kotlin-classes)
-  - [Kotlin Lists & Generics](#kotlin-lists--generics)
 
 ## Exercise
 
@@ -45,19 +40,30 @@ package tech.makers.bank
 import java.time.LocalDate
 
 fun main() {
-    val bankAccount = BankAccount()
+    // Returns a list of Transaction objects
+    // (you will need to implement this data class too).
+    val transactions = createTransactionList()
 
     // Given a client makes a deposit of 1000 on 2021-01-10
-    bankAccount.deposit(1000, LocalDate.of(2021, 1, 10))
-
+    val transactions2 = addTransaction(
+        transactions,
+        createDepositOf(1000, LocalDate.of(2021, 1, 10))
+    )
+    
     // And a deposit of 2000 on 2021-01-13
-    bankAccount.deposit(2000, LocalDate.of(2021, 1, 13))
+    val transactions3 = addTransaction(
+        transactions,
+        createDepositOf(2000, LocalDate.of(2021, 1, 13))
+    )
 
     // And a withdrawal of 500 on 2021-01-14
-    bankAccount.withdraw(500, LocalDate.of(2021, 1, 14))
+    val transactions4 = addTransaction(
+        transactions,
+        createWithdrawalOf(500, LocalDate.of(2021, 1, 14))
+    )
 
     // When she prints her bank statement
-    println(bankAccount.generateStatement())
+    println(generateStatement(transactions4))
 }
 ```
 
@@ -70,158 +76,151 @@ date || credit || debit || balance
 10/01/2021 || 1000.00 || - || 1000.00
 ```
 
+Building this challenge using [the Functional programming paradigm](#on-functional-programming) means that:
+ * Your code should be defined in functions instead of classes (except for test classes).
+ * You cannot use `var` to declare variables which can be reassigned.
+ * Functions such as `createDepositOf` cannot mutate (change) the list of transactions they get in argument. They should return a freshly created, new list of transactions instead.
+ * Functions need to be "pure" — for the same arguments, they should return the exact same result. **This means they cannot access data from outside. They should only use arguments to do their work.**
+
+### Alternative solution
+
+The code above is a bit annoying because we constantly have to reassign a new value for `transactions`. But remember that this is a key thing when writing functional code: we cannot reassign existing values, only create new ones. 
+
+Below is a slightly more concise version of the final code. This one uses a new function `addTransactions`, which takes a list and registers all the transactions at once. Try to test-drive this new function when you're done with the first version of the exercise.
+
+```kotlin
+fun main() {
+    val transactions = createTransactionList()
+
+    val finalTransactions = addTransactions(
+        transactions,
+        listOf(
+          createDepositOf(1000, LocalDate.of(2021, 1, 10)),
+          createDepositOf(2000, LocalDate.of(2021, 1, 13)),
+          createWithdrawalOf(500, LocalDate.of(2021, 1, 14))
+        )
+    )
+
+    // When she prints her bank statement
+    println(generateStatement(finalTransactions))
+}
+```
+
 ## Supporting Materials
 
-### Kotlin's paradigm
+### On Functional Programming
 
-Kotlin is a statically typed. It means you are responsible for telling the compiler what type all of the variables are.
+Functional programming is different from Object-oriented programming in a number of ways, but the main thing to have in mind is that you should avoid side-effects. This means that, ideally:
+ * Functions should not rely on external state to do their work - only their arguments.
+ * You shouldn't reassign data to existing variables. Create new values instead. Prefer `val` to `var`.
+ * Use `map`, `filter` and similar functions to iterate over lists and return new values, instead of `for`, `while` and similar.
 
-Here's an example of a secret diary program. Take a careful read of it to
-understand what it is doing and compare it to languages you know.
+Still, ideally — because a program having zero side effect would be a useless program (it wouldn't access databases, services, APIs, etc). The goal, when having a functional approach, is to try to keep the area of the code having side effects as minimal as possible — and the rest of the codebase as functional as possible.
 
-```java
-// For: src/main/java/tech/makers/diary/Diary.java
+```kotlin
+// This is an unfunctional function:
+var a = 0
+fun increment(): Unit {
+    a += 1
+}
 
-// You'll see the above in IntelliJ as src/main/java/tech.makers.bank/Diary
-// The `tech.makers.bank` is called a package, it separates your code from
-// the code of other libraries, and it's best practice to use one.
-// It's also specified in the code:
-package tech.makers.diary;
-
-public class Diary {
-
-//  Below is an instance variable.
-    private String contents;
-//          ^^^^^^-- We have to explicitly define the type of the variable.
-
-//  In Java, you define the constructor as a method with the same name as
-//  the class. It will be called automatically when `new Diary()` is called.
-    public Diary(String contents) {
-        this.contents = contents;
-//      ^^^^^-- We use `this.` to write to instance variables if there's
-//              a local variable or parameter of the same name.
-    }
-
-//  vvvvvv-- Here we define that this is a public method, a method that can be
-//           called from outside the class.
-    public String read() {
-//         ^^^^^^ We have to define the return value of every method. And then
-//                we absolutely have to return an object of that type!
-        return contents;
-    }
+// This is a functional one:
+fun increment2(a: Int): Int {
+    return a + 1
 }
 ```
 
-```java
-// For: src/main/java/tech/makers/diary/SecretDiary.java
-package tech.makers.diary;
+Kotlin is a multi-paradigm language, which means it allows for a mix of Functional programming and Object-oriented programming, often in the same codebase — so there is no need to "pick a side" and stick to it. But the challenge of the exercise above is to aim to do most of the code in a functional way, instead of using classes and properties like you would do using OOP.
 
-public class SecretDiary {
-    private Diary diary;
-    private Boolean locked;
+Below is an example of a class using a mixture of object-oriented code and more functional code:
 
-    public SecretDiary(Diary diary) {
-        this.diary = diary;
-        locked = true;
+```kotlin
+data class Task(val name: String, val done: Boolean)
+
+class Reminder() {
+    private var tasks = arrayListOf<Task>()
+
+    // The function `remindMe` is not pure,
+    // as calling it has a side effect: it modifies
+    // the state of the object by adding a new task.
+    fun remindMe(newTask: Task) {
+        tasks.add(newTask)
     }
 
-    public void unlock() {
-//         ^^^^-- A `void` return type means 'I won't return anything'.
-        locked = false;
-    }
+    // The function `getAllPending` is pure
+    // and returns the same thing even when 
+    // called a hundred times, as long as the 
+    // list of tasks doesn't change. 
+    // It also uses `filter` instead of using 
+    // additional variables to filter through tasks.
+    fun getAllPending() = tasks.filter { !it.done }
 
-    public void lock() {
-        locked = true;
-    }
+    // The function `markAllDone` is not pure
+    // as it changes the state of the tasks
+    // by reassigning the property `tasks`.
+    fun markAllDone() {
 
-    public String read() {
-        if (locked) {
-            return "Go away!";
-        } else {
-            return diary.read();
-//                           ^^^^^^^-- Here we call the `read` method on `Diary`
+        // However this approach is more
+        // functional, we are using `map`
+        // to build  a new list of tasks
+        // from the previous list of tasks.
+        val newTasks = tasks.map {
+            Task(it.name, true)
         }
+
+        tasks = ArrayList<Task>(newTasks)
     }
 }
 ```
 
-```java
-// For: src/main/java/tech/makers/diary/Main.java
-package tech.makers.diary;
+### Where to put functions?
 
-public class Main {
-    public static void main(String[] args) {
-        Diary diary = new Diary("Eric Cantona is the best footballer!");
-        SecretDiary secretDiary = new SecretDiary(diary);
+Kotlin functions can be defined outside of classes, so there's no need to create classes at all (except for test classes). You can start by creating functions in the main file `Main.kt`, before moving them into different files when the program gets more complex.
 
-        System.out.println(secretDiary.read());
-        // Prints: "Go away!"
+### What is a "pure" function?
 
-        secretDiary.unlock();
-        System.out.println(secretDiary.read());
-        // Prints: "Eric Cantona is the best footballer!"
+```kotlin
+// This function is not pure - it does
+// change some state, calling it multiple
+// times will have different results.
+var a = 0
+fun increment(): Unit {
+    a += 1
+}
+
+// This function is pure
+// If we send the same number to it,
+// it will always return the same result.
+fun increment2(a: Int): Int {
+    return a + 1
+}
+```
+
+## I'm not sure where to start...
+
+Start by creating a test class containing a simple test case - for an empty list of transactions, we should get an "empty" statement (only the columns headers):
+
+```kotlin
+// file: src/test/kotlin/BankTest.kt
+
+import kotlin.test.Test
+
+class BankTest {
+
+    @Test
+    fun addDepositToTransactionList() {
+        val transactions = createTransactionList()
+
+        val expectedStatement = "date || credit || debit || balance"
+
+        assert(generateStatement(finalTransactions) == expectedStatement)
     }
 }
 ```
 
+Start by test-driving the two functions `createTransactionList` and `generateStatement` from this test. These functions can be put together in the main file `Main.kt` for now.
 
-### Kotlin Classes
-
-Take a look at the official Kotlin documentation for [Kotlin Classes](https://kotlinlang.org/docs/classes.html).
-
-### Kotlin Lists & Generics
-
-Lists in Kotlin are fundamentally similar to other languages. However, in a
-statically typed language we need to do a bit more work.
-
-Here's a simple example of a list:
-
-```kotlin
-fun main() {
-    val list = arrayListOf("Hello")
-    list.add("world")
-
-    println(list.get(0))
-    // Prints out "Hello"
-    println(list.get(1))
-    // Prints out "world"
-}
-```
-
-Here's another example:
-
-```kotlin
-
-fun main() {
-    val list = listOf(1, 2)
-
-    println(list.get(0)) // Prints out 1
-}
-
-```
-
-But if you try to add an item to that list...
-
-```kotlin
-fun main() {
-    val list = listOf(1, 2)
-    list.add(3)
-
-    println(list.get(0))
-}
-```
-
-You'll get an error! Why? 
-
-There are many different kinds of lists in Kotlin. They are efficient at different
-tasks, and they can do different sorts of things. `ArrayList`s (created with `arrayListOf`) are **mutable** —
-that means you can change them after creation. Lists (of type `List`) produced by `listOf` are
-**immutable** — that means you can't change them after creation.
-
-That's useful if you want to make sure nothing ever changes your list. But for
-most of our purposes we'll need mutable data structures, and so most of the time
-you should be using `ArrayList`.
-
+Then, gradually add more tests to test-drive the remaining functions used to add new transactions to the list.
 
 [Next Challenge](04_word_guessing_game.md)
 

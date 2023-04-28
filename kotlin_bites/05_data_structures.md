@@ -1,4 +1,4 @@
-# Data structures
+# Collections and loops
 
 _**This is a Makers Bite.** Bites are designed to train specific skills or
 tools. They contain an intro, a demonstration video, some exercises with an
@@ -8,7 +8,7 @@ Bites.](https://github.com/makersacademy/course/blob/main/labels/bites.md)_
 
 ## Objective
 
-Learn to use data structures such as lists and maps in Kotlin.
+Learn to use collections such as lists and maps in Kotlin.
 
 ## Lists
 

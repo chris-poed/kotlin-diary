@@ -1,16 +1,15 @@
 # Introduction to Kotlin
 
 _Coaching this? Read the coach guidance
-[here.](https://github.com/makersacademy/slug/blob/main/materials/universe/distributed_applications/cloud_deployment/HOW_TO_COACH.x.md)_
+[here.](https://github.com/makersacademy/slug/blob/main/materials/universe/language_intros/challenges/kotlin/HOW_TO_COACH.x.md)_
 
 In this module you will learn to:
 
-* Learn how to use Kotlin's basic syntax
-* Learn how to test-drive simple programs in Kotlin
-* Learn to test-drive programs in Kotlin using Functional programming
+* Use Kotlin's basic syntax
+* Test-drive simple programs in Kotlin
+* Test-drive programs in Kotlin using the Functional programming paradigm
 
-You will achieve these by working through a sequence of exercises and
-challenges.
+You will achieve these by working through a sequence of exercises and challenges.
 
 ## Sequence
 
@@ -31,10 +30,13 @@ Work through each of these exercises in sequence.
 6. [More on functions](kotlin_bites/06_functions2.md)
 7. [Classes](kotlin_bites/07_classes.md)
 8. [Writing tests](kotlin_bites/08_writing_tests.md)
+9. [Using Gradle](kotlin_bites/09_using_gradle.md)
 
 ### Phase Two: Challenges
 
-Work through these challenges of increasing complexity. Each of them contains supporting materials and references to previous bites when needed.
+Work through these challenges of increasing complexity. 
+
+Each of them contains additional supporting materials and references to previous materials where needed.
 
 1. [Fizzbuzz](challenges/01_fizzbuzz.md)
 2. [Music Library](challenges/02_music_library.md)

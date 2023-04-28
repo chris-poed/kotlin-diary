@@ -6,7 +6,7 @@ of resources including text, video, and external documentation. [Read more about
 how to use Makers
 Wheels.](https://github.com/makersacademy/course/blob/main/labels/wheels.md)_
 
-In this exercise you will test-drive Fizzbuzz in Kotlin.
+In this exercise you will test-drive a Fizzbuzz function in Kotlin.
 
 - [Exercise](#exercise)
 - [Supporting Materials](#supporting-materials)
@@ -21,7 +21,7 @@ In this exercise you will test-drive Fizzbuzz in Kotlin.
 _This is the exercise. You may or may not be able to do this yet. Use the
 supporting materials below this exercise to help you._
 
-Your task is to test-drive a program that takes a max number and returns a
+Your task is to test-drive a function that takes a max number and returns a
 string. The string should list out the numbers counting up to and including the
 given max number, substituting Fizz where the number is divisible by 3, Buzz
 where it is divisible by 5, and FizzBuzz where it is divisible by both 3 and 5.
@@ -47,27 +47,25 @@ class FizzbuzzTest {
 
     @Test
     fun testGenerateListsNumbersUpToOne() {
-        val subject = Fizzbuzz()
-        val result = subject.generate(1)
+        val result = fizzbuzz(1)
 
         assertEquals("1", result)
     }
 
 //    @Test
 //    fun testGenerateListsNumbersUpToTwo() {
-//        val subject = Fizzbuzz()
-//        val result = subject.generate(2)
+//        
+//        val result = fizzbuzz(2)
 //        assertEquals("1, 2", result)
 //    }
 }
 ```
 
 ```kotlin
-// file: src/main/kotlin/Fizzbuzz.kt
-class Fizzbuzz {
-    fun generate(upto: Int): String {
-        return "1";
-    }
+// file: src/main/kotlin/Main.kt
+
+fun fizzbuzz(number: Int): String {
+    return "1"
 }
 ```
 
@@ -86,13 +84,17 @@ SHOULD RETURN:
 
 [Follow this guidance](../kotlin_bites/01_first_program.md)
 
-### Creating a Method
+### Test-driving a function
 
-[Follow this guidance](../kotlin_bites/07_classes.md)
+If you'd like to use a design recipe to test-drive this function, [here's a function design recipe template adapted for Kotlin.](../resources/single_function_design_recipe.md)
 
-### Ifs and Loops
+### Functions
 
-[Follow this guidance](../kotlin_bites/04_control_flow.md)
+[Follow this guidance](../kotlin_bites/03_functions.md) on functions.
+
+### Conditionals and loops
+
+[Follow this guidance](../kotlin_bites/04_control_flow.md) on control flow.
 
 ### Strings
 

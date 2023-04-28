@@ -1,4 +1,4 @@
-# Control flow
+# Conditionals
 
 _**This is a Makers Bite.** Bites are designed to train specific skills or
 tools. They contain an intro, a demonstration video, some exercises with an
