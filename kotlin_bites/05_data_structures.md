@@ -54,6 +54,10 @@ val signs = getAllNumberSigns()
 
 ## Maps
 
+Maps are another data structure which associates keys with values, similar to "dictionaries" or "hashes" in other languages.
+
+Make sure to not mix up `Map`, which is the type name in Kotlin, with (lowercase) `map`, which is a function you'll see in a bit.
+
 ```kotlin
 // Declaring a map
 val info = mapOf(
@@ -96,6 +100,44 @@ if (phones == null) {
 
 Yes. The compiler will be very strict and will complain if we forget to check for `null` when dealing with nullable types such as `String?` — so be warned.
 
+## Useful functions
+
+### `map`
+
+The member function `map` works on any "collection" — `List`s or `Map`s and other types. It is useful when you want to create a new list from another list.
+
+For example, the following code creates a new `List` of uppercased words, from an initial `List` of words.
+
+```kotlin
+val words = listOf("music", "cheese", "house")
+
+// .map takes a "lambda" function
+// which is called for each element of the list
+// and needs to return the element for the new list.
+val uppercasedWords = words.map {
+    // Note the "return" keyword
+    // is not used in lambdas
+    it.uppercase()
+}
+```
+
+### `filter`
+
+The member function `filter` works on any "collection" — `List`s or `Map`s and other types. It is useful when you want to filter out elements from a list.
+
+For example, the following code creates a new `List` of only positive numbers, by filtering a list of numbers.
+
+```kotlin
+val numbers = listOf(10, -5, 4, -1, 7)
+
+// .filter takes a "lambda" function
+// which is called for each element of the list
+// and needs to return a boolean.
+val positiveNumbers = words.filter {
+    it > 0
+}
+```
+
 ## Exercises
 
 _These exercises are marked with :hot_pepper: emojis to denote how challenging
@@ -109,7 +151,7 @@ challenging even for a professional engineer. Pick whichever you prefer._
 
 ## What to do next
 
-Bookmark the following links — don't read them all know, but they might be helpful as a reference for later.
+Bookmark the following links — don't read them all right now, but they might be helpful as a reference for later.
  * [Collections cheatsheet](https://devhints.io/kotlin#collections)
 
 Then go on to the next section.

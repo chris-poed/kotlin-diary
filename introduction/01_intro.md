@@ -10,6 +10,38 @@ You might read online that Kotlin works with the JVM (Java virtual machine) lang
 
 It's a bit like getting the best of both worlds — the ecosystem has been around for a while and is robust, and the language is a modern one, so benefits from years of shared learning in the software engineering community.
 
+## Install a Java Development Kit
+
+Because Kotlin relies heavily on the Java environment, you will need to install a Java Development Kit (JDK). It contains a bunch of tools that you need for running Kotlin code on your machine. The only thing to be aware of here is the version that you're downloading - right now, version 17 is the best choice even though there are more recent versions.
+
+Luckily, you can install version 17 using homebrew:
+
+```shell
+; brew install openjdk@17
+```
+
+You'll need to run the command suggested by Homebrew after this:
+
+```shell
+sudo ln -sfn /opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-17.jdk
+```
+
+Then, do this to verify that everything worked
+
+```shell
+; java --version
+```
+
+And you should see output a bit like this
+
+```shell
+openjdk 17.0.5 2022-10-18
+OpenJDK Runtime Environment Temurin-17.0.5+8 (build 17.0.5+8)
+OpenJDK 64-Bit Server VM Temurin-17.0.5+8 (build 17.0.5+8, mixed mode)
+```
+
+>  the most important thing is that you have a version which starts with `17`. Other details might be different and that's fine.
+
 ## Ready?
 
 In the next section, you'll open your first Kotlin project, and will start to get familiar with the editor you will use in this module: IntelliJ.

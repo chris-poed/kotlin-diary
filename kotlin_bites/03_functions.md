@@ -100,7 +100,7 @@ println(secret) // null
 
 ## What do to next
 
-Bookmark the following links — don't read them all know, but they might be helpful as a reference for later.
+Bookmark the following links — don't read them all right now, but they might be helpful as a reference for later.
 
  * [Functions reference on the Kotlin manual](https://kotlinlang.org/docs/functions.html)
 

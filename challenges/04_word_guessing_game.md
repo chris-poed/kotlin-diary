@@ -8,6 +8,11 @@ Wheels.](https://github.com/makersacademy/course/blob/main/labels/wheels.md)_
 
 In this challenge, you'll build an old school favourite — a word-guessing game!
 
+- [Exercise](#exercise)
+- [Supporting Materials](#supporting-materials)
+    - [How to manage the game state](#how-to-change-the-game-state)
+    - [I'm not sure where to start](#im-not-sure-where-to-start)
+
 ## Exercise
 
 _This is the exercise. You may or may not be able to do this yet. Use the
@@ -73,11 +78,22 @@ Build this program using [the Functional programming paradigm](./03_bank.md#on-f
 
 ### How to change the game state?
 
-@TODO
-
 You'll notice a few things on the code above:
   * Since our functions cannot change external state (have side-effects), we need to "pass around" the `gameState` value to each function.
-  * Since the function `attemptGuessLetter` can't change the state, it needs to return a new `GameState` object which corresponds to the new state after trying to guess the letter.
+  * Since the function `attemptGuessLetter` can't change the state, it needs to return a new `GameState` object which corresponds to the new state after trying to guess the letter. This will also be true of any other functions which need to alter the state of the game in some way.
+
+```kotlin
+// EXAMPLE:
+
+fun attemptGuessLetter(state: GameState, letter: Char) {
+  // state is the current state data
+
+  // This function will do some work
+
+  // ...then return the new game state
+  return GameState()
+}
+```
 
 ## I'm not sure where to start...
 

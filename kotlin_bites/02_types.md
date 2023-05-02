@@ -170,7 +170,7 @@ val listOfThings: List<Int> = listOf(3, "Hello", 4)
 
 ## What do to next
 
-Bookmark the following links — don't read them all know, but they might be helpful as a reference for later.
+Bookmark the following links — don't read them all right now, but they might be helpful as a reference for later.
  * [Types reference on the Kotlin manual](https://kotlinlang.org/docs/basic-types.html)
  * [Kotlin cheatsheet](https://devhints.io/kotlin)
 

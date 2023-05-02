@@ -10,6 +10,10 @@ In this exercise you'll test-drive Bank in using a paradigm called Functional pr
 
 - [Exercise](#exercise)
 - [Supporting Materials](#supporting-materials)
+    - [On functional programming](#on-functional-programming)
+    - [Where to write my functions?](#where-to-put-functions)
+    - [What is a "pure" function?](#what-is-a-pure-function)
+    - [I'm not sure where to start](#im-not-sure-where-to-start)
 
 ## Exercise
 
@@ -196,7 +200,7 @@ fun increment2(a: Int): Int {
 }
 ```
 
-## I'm not sure where to start...
+### I'm not sure where to start...
 
 Start by creating a test class containing a simple test case - for an empty list of transactions, we should get an "empty" statement (only the columns headers):
 

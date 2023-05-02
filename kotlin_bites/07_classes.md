@@ -12,7 +12,9 @@ Learn to write classes in Kotlin.
 
 ## Classes
 
-If you've learned to use classes in other languages, their behaviour is similar here. In Kotlin, since everything is an object, creating a new class means we are creating a new type.
+If you've learned to use classes in other languages, their behaviour is similar here.
+
+In Kotlin, since everything is an object, creating a new class means we are creating a new type.
 
 ```kotlin
 class Person(firstName: String, lastName: String, age: Int) {
@@ -37,7 +39,7 @@ Go into `src/main/kotlin` in the file tree. Right-click on the `kotlin` director
 
 ## Data classes
 
-Sometimes we need to crate a class just to hold some data, but without any behaviour. We can use Data classes for this:
+Sometimes we need to crate a class just to hold some data, but without any logic inside it. We can use [Data classes](https://kotlinlang.org/docs/data-classes.html) for this:
 
 ```kotlin
 data class User(val email: String, val name: String) {
@@ -50,7 +52,7 @@ val otherUser = User("james@myemail.org", "James")
 
 ## Packages and project organisation
 
-Optionally, a file can be set in a "package" by writing the package name at the top of its file:
+Optionally, [a file can be set in a "package" by writing the package name](https://kotlinlang.org/docs/packages.html) at the top of its file:
 
 ```kotlin
 // file: Diary.kt
@@ -90,7 +92,7 @@ cart.getTotalPrice() // 12.97
 
 ## What to do next
 
-Bookmark the following links — don't read them all know, but they might be helpful as a reference for later.
+Bookmark the following links — don't read them all right now, but they might be helpful as a reference for later.
  * [Classes reference on the Kotlin manual](https://kotlinlang.org/docs/classes.html)
 
 Then go on to the next section.

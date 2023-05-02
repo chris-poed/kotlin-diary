@@ -8,7 +8,7 @@ Bites.](https://github.com/makersacademy/course/blob/main/labels/bites.md)_
 
 ## Objective
 
-Learn to use conditions and loops in Kotlin.
+Learn to use conditionals in Kotlin.
 
 ## Conditionals
 
@@ -87,7 +87,7 @@ You should use a `when` expression in this function.
 
 ## What do to next
 
-Bookmark the following links — don't read them all know, but they might be helpful as a reference for later.
+Bookmark the following links — don't read them all right now, but they might be helpful as a reference for later.
 
  * [Control flow on the Kotlin manual](https://kotlinlang.org/docs/control-flow.html)
 
