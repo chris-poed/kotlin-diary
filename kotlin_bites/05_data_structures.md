@@ -131,6 +131,15 @@ val positiveNumbers = words.filter {
 
 Define a function `printHelloMessages` which, for each name in the list given in argument, prints a hello message. You should use `map` in this function.
 
+```kotlin
+printHelloMessages(listOf("Jake", "Olga", "Pat"))
+
+// Will print:
+// "Hello Jake"
+// "Hello Olga"
+// "Hello Pat"
+```
+
 ### 2
 
 Use the function `getNumberSign` written in the previous section. Write a new function `getAllNumberSigns` which takes an array of numbers (`Int`), and returns an array of the corresponding number signs.

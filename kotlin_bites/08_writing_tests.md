@@ -12,14 +12,16 @@ Learn to write unit tests in Kotlin.
 
 ## Test classes
 
-In Kotlin, tests are written inside test classes. They are regular Kotlin classes, with two main differences:
+In Kotlin, tests are written inside test classes. To create a new test class, right-click on the "test/kotlin" directory in the project explorer, and click "New Kotlin class".
+
+They are regular Kotlin classes, with two main differences:
  * they are created inside the `tests` folder
  * their methods are tagged with the special annotation `@Test`
 
 Here is an example:
 
 ```kotlin
-// file: GreeterTest.kt
+// file: src/test/kotlin/GreeterTest.kt
 import kotlin.test.Test
 
 class GreeterTest {
@@ -33,7 +35,7 @@ class GreeterTest {
 ```
 
 ```kotlin
-// file: Greeter.kt
+// file: src/main/kotlin/Greeter.kt
 
 class Greeter {
     fun greet(name: String) = "Hi $name!"

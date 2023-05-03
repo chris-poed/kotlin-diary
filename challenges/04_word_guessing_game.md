@@ -56,19 +56,29 @@ fun main() {
   // (initially 10)
   getRemainingAttempts(gameState)
 
-  // Returns true (the letter is in the word)
+  isFinished(gameState) // false
+
+  // The letter is in the word - good guess
   val newGameState = attemptGuessLetter(gameState, "E")
 
-  getWordToGuess(gameState) // "M__E__"
+  getWordToGuess(newGameState) // "M__E__"
 
-  // Returns false (the letter is not in the word)
-  val newGameState2 = attemptLetter(gameState, "O") 
+  // The letter is not in the word - wrong guess
+  val newGameState2 = attemptLetter(newGameState, "O") 
 
-  getWordToGuess(gameState) // "M__E__"
+  getWordToGuess(newGameState2) // "M__E__"
 
-  getRemainingAttempts(gameState) // 9
+  getRemainingAttempts(newGameState2) // 9
 
   // ...
+  // And so on
+  // until all letters have been guessed
+
+  val finalState = attemptLetter(newGameStateN, "S")
+
+  getWordToGuess(finalState) // "MAKERS"
+
+  isFinished(finalState) // true
 }
 ```
 

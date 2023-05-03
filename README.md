@@ -43,6 +43,13 @@ Each of them contains additional supporting materials and references to previous
 3. [Bank](challenges/03_bank.md)
 4. [Word-guessing game](challenges/04_word_guessing_game.md)
 
+### Going further
+
+This module doesn't cover (yet) all aspects of the Kotlin language. If you feel confident with most of the things above, you can explore these more advanced concepts:
+ * [Interfaces](https://kotlinlang.org/docs/interfaces.html)
+ * [Asynchronous programming](https://kotlinlang.org/docs/async-programming.html)
+ * [Learn Kotlin by example](https://play.kotlinlang.org/byExample/overview?_ga=2.129959372.134069040.1683031754-1341985408.1681311593&_gl=1*wwkx36*_ga*MTM0MTk4NTQwOC4xNjgxMzExNTkz*_ga_9J976DJZ68*MTY4MzExNzEzOC4zOS4xLjE2ODMxMTk3NTguNTAuMC4w)
+
 
 
 <!-- BEGIN GENERATED SECTION DO NOT EDIT -->

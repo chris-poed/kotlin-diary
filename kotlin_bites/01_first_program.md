@@ -47,6 +47,17 @@ Program arguments:
 Process finished with exit code 0
 ```
 
+
+## A note on compilation
+
+Kotlin is often described as a compiled language, which means _all the code_ of your program is converted (compiled) into a lower-level language (that is understood by processors) before anything else happens. After compilation, the code can be repeatedly executed without the need for repeated compilation.
+
+This is different to languages like Python or Ruby, that compile and execute in something more like real-time every time you want to run the code.
+
+![Kotlin vs Python](./kotlin_vs_python.png)
+
+> The important thing here is that you know Kotlin compilation and execution are two different steps and that your code will be compiled, in its entirety, before being executed. Later on we'll see how things can go wrong at either point.
+
 ## Exercise
 
 We can use the function `println` to print strings or variables in the console output. Add the following to the `main` function:

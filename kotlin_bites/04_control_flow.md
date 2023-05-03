@@ -96,6 +96,16 @@ Write a function `isWordList` which returns `true` only if the given value is a 
 
 You should use a `when` expression in this function.
 
+```kotlin
+isWordList(listOf("these", "are", "words")) // true
+
+isWordList(listOf(3, 5, 1)) // false
+
+isWordList(true) // false
+
+isWordList("hello") // false
+```
+
 ## What do to next
 
 Bookmark the following links — don't read them all right now, but they might be helpful as a reference for later.

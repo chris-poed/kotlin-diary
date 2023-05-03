@@ -26,7 +26,7 @@ The syntax in Kotlin is quite flexible and allows us to define (or not):
 class Person(firstName: String, lastName: String)
 
 // Creating a new object from this class
-val someone = Person("John", "Doe")
+val someone: Person = Person("John", "Doe")
 ```
 
 Below is a more complex example:

@@ -115,7 +115,7 @@ fun main() {
 ### On Functional Programming
 
 Functional programming is different from Object-oriented programming in a number of ways, but the main thing to have in mind is that you should avoid side-effects. This means that, ideally:
- * Functions should not rely on external state to do their work - only their arguments.
+ * Functions should not rely on external state to do their work - only their arguments. They also shouldn't modify state outside.
  * You shouldn't reassign data to existing variables. Create new values instead. Prefer `val` to `var`.
  * Use `map`, `filter` and similar functions to iterate over lists and return new values, instead of `for`, `while` and similar.
 

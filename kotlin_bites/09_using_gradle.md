@@ -50,7 +50,9 @@ application {
 }
 ```
 
-We'll add a few packages of the library `http4k`, which we can use to build web applications in Kotlin.
+You don't need to understand every line in that file.
+
+For now, we'll add a few packages of the library `http4k`, which we can use to build web applications in Kotlin.
 
 ```gradle
 dependencies {
