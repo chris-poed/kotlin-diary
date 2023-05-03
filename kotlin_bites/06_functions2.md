@@ -10,6 +10,10 @@ Bites.](https://github.com/makersacademy/course/blob/main/labels/bites.md)_
 
 Learn to use higher-order functions and lambdas.
 
+## Video
+
+[A video walkthrough of this section is available here.](https://www.youtube.com/watch?v=pNKrTz4Rx5I)
+
 ## Functions have types
 
 Let's talk a bit more about types first.

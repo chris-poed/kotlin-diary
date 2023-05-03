@@ -12,11 +12,27 @@ Learn to write classes in Kotlin.
 
 ## Classes
 
-If you've learned to use classes in other languages, their behaviour is similar here.
+If you've learned to use classes in other languages, their behaviour is similar here. A class is a blueprint to create objects so they have data (properties) and behaviour (member functions).
 
 In Kotlin, since everything is an object, creating a new class means we are creating a new type.
 
+The syntax in Kotlin is quite flexible and allows us to define (or not):
+ * its constructor (the special function of a class  executed whenever we create new objects of that class)
+ * its properties, if any
+ * its member functions (or methods), if any
+
 ```kotlin
+// Defining a class and its constructor
+class Person(firstName: String, lastName: String)
+
+// Creating a new object from this class
+val someone = Person("John", "Doe")
+```
+
+Below is a more complex example:
+
+```kotlin
+// Defining a cless, its constructor, properties and member functions
 class Person(firstName: String, lastName: String, age: Int) {
     
     val fullName = "$firstName $lastName"
@@ -26,10 +42,13 @@ class Person(firstName: String, lastName: String, age: Int) {
     }
 }
 
-// Creating an instance of the class
+// Creating a new object from this class
 val person: Person = Person("John", "Doe", 40)
 
+// Accessing properties
 println(person.fullName)
+
+// Calling member functions
 println(person.getIntroduction())
 ```
 
@@ -39,7 +58,7 @@ Go into `src/main/kotlin` in the file tree. Right-click on the `kotlin` director
 
 ## Data classes
 
-Sometimes we need to crate a class just to hold some data, but without any logic inside it. We can use [Data classes](https://kotlinlang.org/docs/data-classes.html) for this:
+Sometimes we need to create a class just to hold some data, but without any logic inside it. We can use [Data classes](https://kotlinlang.org/docs/data-classes.html) for this:
 
 ```kotlin
 data class User(val email: String, val name: String) {

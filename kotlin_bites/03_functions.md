@@ -8,17 +8,25 @@ Bites.](https://github.com/makersacademy/course/blob/main/labels/bites.md)_
 
 ## Objective
 
-Learn to write Kotlin functions
+Learn to write Kotlin functions.
+
+## Video
+
+[A video walkthrough of this section is available here.](https://www.youtube.com/watch?v=o_inHmXXKus)
 
 ## Function syntax
 
-Like in other languages, a Kotlin function can take arguments, do some work, and return a result. For example, a function `add` to sum two numbers:
+Like in other languages, Kotlin functions are units of code that you can call on demand. They can accept arguments, do some work, and return a result.
+
+For example, a function `add` to sum two numbers:
 
 ```kotlin
 val result = add(2, 3) // 5
 ```
 
-When defining a function, we need to specify the type for the arguments and return value.
+When defining a function in Kotlin, we need to specify the type for the arguments and return value. This means that for each function you'll create, you will need to think in advance: what types of values does it take as inputs? And what type of value does it need to return? 
+
+This can seem annoying if you're used to other languages where this is not necessary, though it will help avoiding a whole class of bugs in your programs.
 
 ```kotlin
 // getHelloMessage takes one String argument, 
@@ -69,20 +77,22 @@ fun findAddress(name): String {
 
 ## Exercises
 
-_These exercises are marked with :hot_pepper: emojis to denote how challenging
-they are. A single chilli :hot_pepper: is the most straightforward, and five
-:hot_pepper::hot_pepper::hot_pepper::hot_pepper::hot_pepper: would be
-challenging even for a professional engineer. Pick whichever you prefer._
-
 You can work through the following exercises in the same function `main` of the previous program, or in a new project. You might want to use the function `println` to check your results.
 
-### 1 :hot_pepper: 
+### 1
 
-Define a new function `add` which adds two numbers and return the result.
-    ```kotlin
-    val result = add(2, 3) // 5
-    ```
-### 2 :hot_pepper: 
+Write a method called `superify` which takes a string and adds the word "super" to the start. So given 'woman' it returns 'superwoman', given 'dog' it returns 'superdog'.
+
+Then use it to create the ultimate feline superhero, like this:
+
+```kotlin
+println(superify(superify(superify(superify("cat")))))
+
+// Should print:
+"supersupersupersupercat"
+```
+
+### 2
 
 Define a function `revealSecret` which takes a passcode in argument, and returns a secret string "The cookies are in the desk drawer" only if the given passcode is the string `"HUNGRY"`.
 
@@ -97,6 +107,8 @@ println(secret) // "The cookies are in the desk drawer"
 val secret = revealSecret("Hi") 
 println(secret) // null
 ```
+
+[Solutions in this video](https://www.youtube.com/watch?v=o_inHmXXKus&t=1280s)
 
 ## What do to next
 

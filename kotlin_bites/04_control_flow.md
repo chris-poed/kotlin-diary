@@ -10,15 +10,17 @@ Bites.](https://github.com/makersacademy/course/blob/main/labels/bites.md)_
 
 Learn to use conditionals in Kotlin.
 
-## Conditionals
+## If
 
-Kotlin has a few ways to handle conditional statements, like `if` / `else` and `when` expressions.
+Kotlin has a few ways to handle conditional statements, like `if` / `else` which work in the same way as other languages.
 
 ```kotlin
 var max = a
 
 // Simple "if"
-if (a < b) max = b
+if (a < b) {
+    max = b
+}
 
 // With "else"
 if (a > b) {
@@ -31,6 +33,10 @@ if (a > b) {
 // (`max` will be assigned to either a or b)
 max = if (a > b) a else b
 ```
+
+## When
+
+Kotlin also has something called `when` expressions, which allows us to handle more complex conditional branching.
 
 ```kotlin
 when (x) {
@@ -56,13 +62,18 @@ fun whatIsThis(something: Any): String {
         when(something) {
             1 -> "One"
             "Hello" -> "Greeting"
-            is Long -> "Long"
-            !is String -> "Not a string"
+            is Number -> "A number"
+            is String -> "A string"
             else -> "Something else"
         }
 
     return result
 }
+
+println(whatIsThis(2))          // "A number"
+println(whatIsThis(1))          // "One"
+println(whatIsThis("Hello"))    // "Greeting"
+println(whatIsThis(listOf(1)))  // "Something else"
 ```
 
 ## Exercise

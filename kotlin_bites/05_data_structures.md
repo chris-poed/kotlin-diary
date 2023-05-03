@@ -39,19 +39,6 @@ names.forEach {
 
 The last example above introduces a new syntax called a lambda — you'll learn more about this soon.
 
-## Exercise
-
-Use the function `getNumberSign` written in the previous section. Write a new function `getAllNumberSigns` which takes an array of numbers (`Int`), and returns an array of the corresponding number signs.
-
-Here's the expected behaviour:
-
-```kotlin
-val numbers = listOf(2, -3, 5, 0)
-
-val signs = getAllNumberSigns()
-// ["positive", "negative", "positive", "zero"]
-```
-
 ## Maps
 
 Maps are another data structure which associates keys with values, similar to "dictionaries" or "hashes" in other languages.
@@ -140,14 +127,24 @@ val positiveNumbers = words.filter {
 
 ## Exercises
 
-_These exercises are marked with :hot_pepper: emojis to denote how challenging
-they are. A single chilli :hot_pepper: is the most straightforward, and five
-:hot_pepper::hot_pepper::hot_pepper::hot_pepper::hot_pepper: would be
-challenging even for a professional engineer. Pick whichever you prefer._
+### 1
 
-* :hot_pepper: Define a list `numbers` containing a few numbers and print it using `println`
-* :hot_pepper::hot_pepper: Define a function `printHelloMessages` which, for each name in the list given in argument, prints a hello message. You should use `map` in this function.
-* :hot_pepper::hot_pepper: Rewrite your function `getAllNumberSigns` without using an extra array (hint: [can you use the `map` method?](https://kotlinlang.org/docs/collection-transformations.html#map))
+Define a function `printHelloMessages` which, for each name in the list given in argument, prints a hello message. You should use `map` in this function.
+
+### 2
+
+Use the function `getNumberSign` written in the previous section. Write a new function `getAllNumberSigns` which takes an array of numbers (`Int`), and returns an array of the corresponding number signs.
+
+Here's the expected behaviour:
+
+```kotlin
+val numbers = listOf(2, -3, 5, 0)
+
+val signs = getAllNumberSigns()
+// ["positive", "negative", "positive", "zero"]
+```
+
+You should use the function `map` in this function.
 
 ## What to do next
 

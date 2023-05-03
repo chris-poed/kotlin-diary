@@ -51,7 +51,7 @@ The results of the tests run will appear in the bottom of the IntelliJ IDE.
 
 ## Exercise
 
-Write some tests for the following class
+Write some tests for the following class. Make sure to cover all possible cases (with a valid phone number and an invalid one).
 
 ```kotlin
 class PhoneChecker {
@@ -66,7 +66,19 @@ class PhoneChecker {
 
 Test-drive a class with the following behaviour
 
-@TODO
+```kotlin
+val reminder = Reminder("Leo")
+
+reminder.remindMeTo("Walk the dog")
+
+reminder.remind() // "Walk the dog, Leo!"
+
+val reminder2 = Reminder("Ju")
+
+reminder2.remindMeTo("Buy popcorn")
+
+reminder2.remind() // "Buy popcorn, Ju!"
+```
 
 [Next Challenge](09_using_gradle.md)
 
