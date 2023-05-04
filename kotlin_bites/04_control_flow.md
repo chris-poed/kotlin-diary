@@ -10,6 +10,10 @@ Bites.](https://github.com/makersacademy/course/blob/main/labels/bites.md)_
 
 Learn to use conditionals in Kotlin.
 
+## Video
+
+[A video walkthrough of this section is available here.](https://www.youtube.com/watch?v=mBKeP3-DmVQ)
+
 ## If
 
 Kotlin has a few ways to handle conditional statements, like `if` / `else` which work in the same way as other languages.
@@ -88,22 +92,6 @@ getNumberSign(0) // "zero"
 getNumberSign(-5) // "negative"
 
 getNumberSign("not a number") // null
-```
-
-## Exercise 
-
-Write a function `isWordList` which returns `true` only if the given value is a List of Strings, and `false` otherwise.
-
-You should use a `when` expression in this function.
-
-```kotlin
-isWordList(listOf("these", "are", "words")) // true
-
-isWordList(listOf(3, 5, 1)) // false
-
-isWordList(true) // false
-
-isWordList("hello") // false
 ```
 
 ## What do to next

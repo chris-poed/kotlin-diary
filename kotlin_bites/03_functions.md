@@ -98,7 +98,7 @@ Define a function `revealSecret` which takes a passcode in argument, and returns
 
 If the given passcode is something else, the function should return `null`.
 
-(What should be the return value type of this function?)
+[You will need to use an `if` statement](https://kotlinlang.org/docs/control-flow.html#if-expression) to implement this function.
 
 ```kotlin
 val secret = revealSecret("HUNGRY") 

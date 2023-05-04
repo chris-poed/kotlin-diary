@@ -94,7 +94,20 @@ If you'd like to use a design recipe to test-drive this function, [here's a func
 
 ### Conditionals and loops
 
-[Follow this guidance](../kotlin_bites/04_control_flow.md) on control flow.
+[Follow this guidance](../kotlin_bites/04_control_flow.md) on collections and loops.
+
+> But how do I loop through a sequence of numbers?
+
+A sequence of numbers is also a collection — in Kotlin, we can use a Range to create a collection which is a list of numbers from a low bound to a high bound.
+
+```kotlin
+val numbersToTen = (0..10) // Create a value of type IntRange
+
+// Will print all numbers in the range
+numbersToTen.forEach {
+  println(it)
+}
+```
 
 ### Strings
 

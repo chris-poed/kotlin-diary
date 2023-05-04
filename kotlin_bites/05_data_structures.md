@@ -10,6 +10,10 @@ Bites.](https://github.com/makersacademy/course/blob/main/labels/bites.md)_
 
 Learn to use collections such as lists and maps in Kotlin.
 
+## Video
+
+[A video walkthrough of this section is available here.](https://youtu.be/mBKeP3-DmVQ?t=991)
+
 ## Lists
 
 ```kotlin
@@ -87,11 +91,31 @@ if (phones == null) {
 
 Yes. The compiler will be very strict and will complain if we forget to check for `null` when dealing with nullable types such as `String?` — so be warned.
 
-## Useful functions
+## Useful collection functions
+
+The following functions can be used on any [Collection](https://kotlinlang.org/docs/collections-overview.html), for example:
+ * `List` and `ArrayList`
+ * `Map`
+ * `Range`
+ * etc.
+
+### `forEach`
+
+We can use it to loop through every element of a collection.
+
+```kotlin
+val words = listOf("music", "cheese", "house")
+
+// .map takes a "lambda" function
+// which is called for each element of the list.
+words.forEach {
+    println(it)
+}
+```
 
 ### `map`
 
-The member function `map` works on any "collection" — `List`s or `Map`s and other types. It is useful when you want to create a new list from another list.
+This function is useful when you want to create a new list from another list.
 
 For example, the following code creates a new `List` of uppercased words, from an initial `List` of words.
 
@@ -110,7 +134,7 @@ val uppercasedWords = words.map {
 
 ### `filter`
 
-The member function `filter` works on any "collection" — `List`s or `Map`s and other types. It is useful when you want to filter out elements from a list.
+This function is useful when you want to filter out elements from a list.
 
 For example, the following code creates a new `List` of only positive numbers, by filtering a list of numbers.
 
