@@ -16,7 +16,7 @@ Learn to write classes in Kotlin.
 
 ## Classes
 
-If you've learned to use classes in other languages, their behaviour is similar here. A class is a blueprint to create objects so they have data (properties) and behaviour (member functions).
+Classes in Kotlin work similarly to other languages. A class is a blueprint to create objects so they have data (properties) and behaviour (member functions).
 
 In Kotlin, everything is an object. Even a string is actually an object created from the class `String`:
 
@@ -103,7 +103,9 @@ val otherUser = User("james@myemail.org", "James")
 
 ## Packages and project organisation
 
-The best practice is often to put each file in its own file. For example, classes `DiaryEntry` and `Diary` would go in files named `DiaryEntry.kt` and `Diary.kt`.
+The best practice is often to put each file in its own file. For example, classes `DiaryEntry` and `Diary` would go in files named `DiaryEntry.kt` and `Diary.kt`. 
+
+Note that because all source files are compiled together, there is no need to "require" or "load" other files from the main file.
 
 Optionally, [a file can be set in a "package" by writing the package name](https://kotlinlang.org/docs/packages.html) at the top of its file:
 
@@ -123,6 +125,25 @@ class Diary(val entries: List<DiaryEntry>) {
 }
 ```
 
+In the examples above, adding the `package` declaration "moves" these classes under the package name. Their full name become `com.makers.diary.DiaryEntry` and `com.makers.diary.Diary`.
+
+To use these classes in another file set in a different package (`Main.kt` for example), we need to use an `import` directive.
+
+```kotlin
+// file: Main.kt
+import com.makers.diary.DiaryEntry
+import com.makers.diary.Diary
+
+fun main() {
+    val diaryEntry = DiaryEntry("Buy milk")
+    val diary = Diary()
+
+    // ...
+}
+```
+
+The IDE will usually automatically add these `import` directives for you when you reference a class in your code, so often you won't need to manually write them. But it's still important to understand how they work.
+
 When using packages, a few rules to follow:
  * Write one class in its own file.
  * The directory structure follow the package naming, except for the "root" package.
@@ -136,8 +157,8 @@ Write two classes `Item` and `ShoppingCart` (in their separate files) so the fol
 ```kotlin
 val item = Item("Mars", 4.99)
 
-item.getName() // 'Mars'
-item.getPrice() // 4.99
+item.name // 'Mars'
+item.price // 4.99
 
 val cart = ShoppingCart()
 cart.getTotalPrice() // 0.0
@@ -156,6 +177,7 @@ cart.getTotalPrice() // 12.97
 
 Bookmark the following links — don't read them all right now, but they might be helpful as a reference for later.
  * [Classes reference on the Kotlin manual](https://kotlinlang.org/docs/classes.html)
+  * [Packages and imports reference on the Kotlin manual](https://kotlinlang.org/docs/packages.html)
 
 Then go on to the next section.
 
