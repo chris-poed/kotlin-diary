@@ -25,7 +25,17 @@ As you may already know, a program can manipulate different kind of values:
 
 If you've used a language such as Ruby or Python before, you might have not had to worry much about these. In Kotlin, though, types are an important element of the language, so it's worth spending some time learning about it.
 
-You can try out by yourself most of the code examples below to check results.
+You can try out by yourself most of the code examples below to check results. Make sure you write your code inside the function `main` so it is run:
+
+```kotlin
+// file: Main.kt
+
+fun main(args: Array<String>) {
+    // Write any code in here
+
+    // ...
+}
+```
 
 ## Declaring values
 

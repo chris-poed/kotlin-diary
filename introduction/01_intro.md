@@ -17,7 +17,7 @@ Because Kotlin relies heavily on the Java environment, you will need to install 
 Luckily, you can install version 17 using homebrew:
 
 ```shell
-; brew install openjdk@17
+brew install openjdk@17
 ```
 
 You'll need to run the command suggested by Homebrew after this:
@@ -29,7 +29,7 @@ sudo ln -sfn /opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk /Library/Java/Java
 Then, do this to verify that everything worked
 
 ```shell
-; java --version
+java --version
 ```
 
 And you should see output a bit like this

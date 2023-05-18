@@ -26,7 +26,9 @@ Then click "Create" to confirm. It might then take a few moments for IntelliJ to
 
 ## The code
 
-The IDE generated some starter code for us in `Main.kt`.
+The IDE generated some starter code for us in the file `Main.kt`.
+
+This code defines a function named `main`:
 
 ```kotlin
 fun main(args: Array<String>) {
@@ -35,7 +37,21 @@ fun main(args: Array<String>) {
 }
 ```
 
-In Kotlin, the "entrypoint" of a program (which is, the first function being run) is always the `main` function. Let's run it.
+In Kotlin, the "entrypoint" of a program (which is, the first thing being run) is always the `main` function. 
+
+Let's run it. You can use the "Run" button on the top-right corner of the IDE, or use the shortcut `Ctrl+R`.
+
+## Comments
+
+In Kotlin, a comment is started by a double forward slash (`//`). Throughout this module, you'll often see snippets of Kotlin code annotated with comments to explain some concepts.
+
+```kotlin
+// This is a comment
+
+fun main(args: Array<String>) {
+    // ...
+}
+```
 
 ## Checking the program output
 
@@ -55,8 +71,6 @@ Kotlin is often described as a compiled language, which means _all the code_ of 
 This is different to languages like Python or Ruby, that compile and execute in something more like real-time every time you want to run the code.
 
 ![Kotlin vs Python](./kotlin_vs_python.png)
-
-> The important thing here is that you know Kotlin compilation and execution are two different steps and that your code will be compiled, in its entirety, before being executed. Later on we'll see how things can go wrong at either point.
 
 ## Exercise
 

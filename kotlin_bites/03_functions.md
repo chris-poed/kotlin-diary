@@ -35,6 +35,8 @@ fun getHelloMessage(name: String): String {
     return "Hello ${name}"
 }
 
+// Calling a function and getting its
+// return value into a new value.
 val helloMessage = getHelloMessage("Leo")
 
 // We can use a shorter syntax
@@ -57,6 +59,7 @@ fun printList(list: List<Any>): Unit {
     }
 
     // No return statement
+    // (this function only has side effects)
 }
 ```
 

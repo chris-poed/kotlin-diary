@@ -10,11 +10,24 @@ Bites.](https://github.com/makersacademy/course/blob/main/labels/bites.md)_
 
 Learn to write classes in Kotlin.
 
+## Video
+
+[A video walkthrough of this section is available here.](https://www.youtube.com/watch?v=xvLReE3HPXo)
+
 ## Classes
 
 If you've learned to use classes in other languages, their behaviour is similar here. A class is a blueprint to create objects so they have data (properties) and behaviour (member functions).
 
-In Kotlin, since everything is an object, creating a new class means we are creating a new type.
+In Kotlin, everything is an object. Even a string is actually an object created from the class `String`:
+
+```kotlin
+// Creating an empty String
+val name = String()
+
+name.length // 0
+```
+
+Since everything is an object, creating a new class means we are creating a new type.
 
 The syntax in Kotlin is quite flexible and allows us to define (or not):
  * its constructor (the special function of a class  executed whenever we create new objects of that class)
@@ -22,19 +35,37 @@ The syntax in Kotlin is quite flexible and allows us to define (or not):
  * its member functions (or methods), if any
 
 ```kotlin
-// Defining a class and its constructor
-class Person(firstName: String, lastName: String)
+// Defining an "empty" class
+class Person
 
-// Creating a new object from this class
-val someone: Person = Person("John", "Doe")
+// Kotlin automatically creates a default constructor
+// with no arguments
+val someone = Person()
+
+// Defining a class and its properties.
+// The constructor now takes two (required) arguments
+class Person(val firstName: String, val lastName: String)
+
+val someone = Person("John", "Doe")
 ```
 
 Below is a more complex example:
 
 ```kotlin
 // Defining a cless, its constructor, properties and member functions
-class Person(firstName: String, lastName: String, age: Int) {
+class Person(
+    val firstName: String,
+    val lastName: String,
+    val age: Int,
+    // This property will have a default value
+    // so we don't need to pass the constructor argument.
+    val hobbies: List<String> = listOf()
+) {
     
+    // The property fullName
+    // is set from the two other properties
+    // firstName and lastName.
+    // It's a "val", so it cannot be changed later.
     val fullName = "$firstName $lastName"
 
     fun getIntroduction(): String {
@@ -47,6 +78,7 @@ val person: Person = Person("John", "Doe", 40)
 
 // Accessing properties
 println(person.fullName)
+println(person.hobbies)
 
 // Calling member functions
 println(person.getIntroduction())
@@ -71,18 +103,29 @@ val otherUser = User("james@myemail.org", "James")
 
 ## Packages and project organisation
 
+The best practice is often to put each file in its own file. For example, classes `DiaryEntry` and `Diary` would go in files named `DiaryEntry.kt` and `Diary.kt`.
+
 Optionally, [a file can be set in a "package" by writing the package name](https://kotlinlang.org/docs/packages.html) at the top of its file:
+
+```kotlin
+// file: DiaryEntry.kt
+package com.makers.diary
+
+data class DiaryEntry(val name: String)
+```
 
 ```kotlin
 // file: Diary.kt
 package com.makers.diary
 
-// ...
+class Diary(val entries: List<DiaryEntry>) {
+    // ...
+}
 ```
 
 When using packages, a few rules to follow:
  * Write one class in its own file.
- * The directory structure follow the package, except for the "root" package.
+ * The directory structure follow the package naming, except for the "root" package.
  
 For example, a file with package `com.makers.diary` will be at the root directory `src/main/kotlin`. A file with package `com.makers.diary.models` will be in the directory `src/main/kotlin/models`, and so on.
 
@@ -91,20 +134,20 @@ For example, a file with package `com.makers.diary` will be at the root director
 Write two classes `Item` and `ShoppingCart` (in their separate files) so the following code works:
 
 ```kotlin
-val item = Item('Mars', 4.99)
+val item = Item("Mars", 4.99)
 
 item.getName() // 'Mars'
 item.getPrice() // 4.99
 
 val cart = ShoppingCart()
-cart.getTotalPrice() // 0
+cart.getTotalPrice() // 0.0
 
 cart.addItem(item)
 
 cart.getTotalPrice() // 4.99
 
-cart.addItem(Item('Skittle', 3.99))
-cart.addItem(Item('Skittle', 3.99))
+cart.addItem(Item("Skittle", 3.99))
+cart.addItem(Item("Skittle", 3.99))
 
 cart.getTotalPrice() // 12.97
 ```
