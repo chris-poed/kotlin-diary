@@ -14,6 +14,7 @@ In this exercise you'll test-drive Bank in using a paradigm called Functional pr
     - [Where to write my functions?](#where-to-put-functions)
     - [What is a "pure" function?](#what-is-a-pure-function)
     - [I'm not sure where to start](#im-not-sure-where-to-start)
+    - [Exercises on Functional programming]()
 
 ## Exercise
 
@@ -225,6 +226,48 @@ class BankTest {
 Start by test-driving the two functions `createTransactionList` and `generateStatement` from this test. These functions can be put together in the main file `Main.kt` for now.
 
 Then, gradually add more tests to test-drive the remaining functions used to add new transactions to the list.
+
+### Exercises on Functional programming
+
+Update these Kotlin programs so they have a more functional approach. Make sure the code still works and behaves the same as before your changes.
+
+#### 1
+
+```kotlin
+
+fun addNumbersUpTo(max: Int): Int {
+    var sum = 0
+
+    (1..max).forEach {
+        sum += it
+    }
+
+    return sum
+}
+
+// Will print 55
+println(addNumbersUpTo(10))
+```
+
+#### 2
+
+```kotlin
+fun invitationMessage(friends: List<String>): String {
+    var message = "Hello "
+
+    friends.forEach {
+        message = message.plus(it).plus(", ")
+    }
+
+    message = message.plus("you are invited to my birthday party!")
+
+    return message
+}
+
+// Will print "Hello Ana, Jo, Kat, you are invited to my birthday party!"
+println(invitationMessage(listOf("Ana", "Jo", "Kat")))
+```
+
 
 [Next Challenge](04_word_guessing_game.md)
 

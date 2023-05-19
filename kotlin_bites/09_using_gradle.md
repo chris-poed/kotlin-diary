@@ -16,9 +16,11 @@ Learn to install libraries using the tool Gradle.
 
 Gradle comes installed with IntelliJ and new projects come with some basic configuration already setup, so you won't need to install and setup Gradle separately.
 
-## Installing a library
+## The build script
 
-Open the file `build.gradle` of the previous `hello` project. It should look more or less like this:
+Kotlin projects contains a file named `build.gradle` — also called a build script. This file is used by Gradle to build the project, including any dependencies.
+
+Open the file `build.gradle` located in the previously created `hello` project. It should look more or less like this:
 
 ```gradle
 plugins {
@@ -52,9 +54,17 @@ application {
 
 You don't need to understand every line in that file.
 
-For now, we'll add a few packages of the library `http4k`, which we can use to build web applications in Kotlin.
+## Installing libraries
+
+As an example, we will install a few packages from the library `http4k`. This library allows to build web applications in Kotlin.
+
+Add the following lines to `dependencies` block of the build script file:
 
 ```gradle
+// file: build.gradle
+
+// ...
+
 dependencies {
     // ...
 
@@ -64,13 +74,17 @@ dependencies {
 }
 ```
 
-The IntelliJ IDE will detect you made some changes to the file, and will prompt you to "sync" the project — which means installing the new dependencies, and re-building the project. You can also use the keyboard shortcut `Shift+Cmd+I`
+The IntelliJ IDE will detect you made some changes to the file, and will prompt you to "sync" the project — which means installing the new dependencies, and re-building the project.
+
+You can also use the keyboard shortcut `Shift+Cmd+I` on macOS.
 
 ![](./intellij5.png)
 
 ## Using the library `http4k`
 
-Once the Gradle sync is done (and successful), we can use classes, types and functions from the installed libraries in our code:
+Once the Gradle sync is done (and successful), we can use classes, types and functions from the installed libraries in our code.
+
+The following code is an example of importing and using the different classes and functions from the library in the `main` function.
 
 ```kotlin
 // file: Main.kt
