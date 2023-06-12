@@ -32,7 +32,8 @@ You can now open the project in IntelliJ. It might take a few minutes for it to 
 <details>
     <summary>Got an error message?</summary>
 
-    You might need to "sync" the project with the editor to make sure all the right settings are applied.
+You might need to "sync" the project with the editor to make sure all the right settings are applied. To do this, open the "Gradle" pan which is located at the right of the editor. Then click "Reload all Gradle projects" (the small recycling icon).
+
 </details>
 
 ## Video
@@ -43,11 +44,11 @@ Otherwise, you can follow steps in the written guidance below.
 
 ## Running the program
 
-You can use the file explorer on the left of the editor to browse the project file structure.
+Let's see how to run the program first. You can use the file explorer on the left of the editor to browse the project file structure.
 
-The program contains a file named `Main.kt` (in `src/main/kotlin`). Double click on this file in the project explorer to open it in the editor.
+It contains a file named `Main.kt` (in `src/main/kotlin`). Double click on this file in the project explorer to open it in the code editor.
 
-A small "play" button is next to the `main` function declaration. Click on it and select "Run 'MainKt'" to run the program.
+You will see a small "play" icon next to the `main` function declaration, on the left of the code editor. Click on it and select "Run 'MainKt'" to run the program.
 
 You should then get an output similar to the one below in the bottom section of the editor:
 
