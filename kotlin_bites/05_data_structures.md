@@ -79,7 +79,7 @@ phones.count()
 
 // Instead, we need to explictly check
 // whether it is null or not:
-if (phones == null) {
+if (phones != null) {
     // Do something with phones
     println(phones.count())
 } else {
