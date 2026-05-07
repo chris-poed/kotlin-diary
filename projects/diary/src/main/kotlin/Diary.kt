@@ -6,7 +6,7 @@ class Diary {
 
     val entries = ArrayList<DiaryEntry>()
 
-    fun addEntry(entry: DiaryEntry): Unit {
+    fun addEntry(entry: DiaryEntry) {
         entries.add(entry)
     }
 

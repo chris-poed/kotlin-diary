@@ -2,7 +2,7 @@ package com.makers.diary
 
 import java.util.*
 
-fun main(args: Array<String>) {
+fun main() {
     val diary = Diary()
     val entry = DiaryEntry("An entry", "Hello", Date())
 
@@ -10,4 +10,5 @@ fun main(args: Array<String>) {
 
     println("Diary entries below:")
     println(diary.getAllEntries())
+    println("This is my own message")
 }
