@@ -11,4 +11,9 @@ fun main() {
     println("Diary entries below:")
     println(diary.getAllEntries())
     println("This is my own message")
+
+    val reminder = Reminder("Chris")
+    reminder.remindMeTo("Fit the hose")
+    println(reminder.remind())
+
 }
